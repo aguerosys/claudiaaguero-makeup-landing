@@ -1,23 +1,43 @@
 export const services =[
     {
         title: "Maquillaje social",
-        desc: "Ideal para fiestas, cenas y eventos formales. Resaltamos tus facciones de manera elegante.",
+        desc: "Ideal para eventos y ocasiones especiales. Acabado prolijo, luminoso y duradero.",
         icon: "sparkles"
     },
     {
-        title: "Maquillaje para eventos",
-        desc: "Larga duración y acabados perfectos para madrinas, egresadas y celebraciones.",
-        icon: "gem"
+        title: "Maquillaje artístico",
+        desc: "Diseños creativos, colores, efectos y detalles para looks únicos.",
+        icon: "palette"
     },
     {
-        title: "Maquillaje profesional",
-        desc: "Técnicas avanzadas adaptadas a tu tipo de piel y estilo personal.",
-        icon: "brush"
-    },
-    {
-        title: "Producciones y sesiones",
-        desc: "Maquillaje HD específico para fotografía, video y moda.",
+        title: "Maquillaje para publicaciones y campañas",
+        desc: "Maquillaje pensado para foto/video: definición, piel pareja y terminación impecable.",
         icon: "camera"
+    },
+    {
+        title: "Prueba de maquillaje",
+        desc: "Probamos estilos, tonos y técnica para que el día del evento salga perfecto.",
+        icon: "check-circle"
+    },
+    {
+        title: "Backstage",
+        desc: "Asistencia durante producciones/eventos: retoques, cambios de look y control de brillo.",
+        icon: "video"
+    },
+    {
+        title: "Maquillaje para hombre",
+        desc: "Corrección sutil y natural: unifica, matifica y resalta sin sobrecargar.",
+        icon: "user"
+    },
+    {
+        title: "Cuidado y limpieza de cutis",
+        desc: "Rutina de limpieza y preparación de la piel para un mejor resultado del maquillaje.",
+        icon: "droplets"
+    },
+    {
+        title: "Fiesta de bar (Glitters)",
+        desc: "Brillos, glitters y detalles para una salida con impacto y mucha onda.",
+        icon: "sparkles"
     }
 ];
 
