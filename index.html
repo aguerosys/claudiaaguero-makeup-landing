@@ -19,7 +19,9 @@
                         'brand-beige': '#232327',
                         'brand-gold': '#E6E6EA',
                         'brand-dark': '#0B0B0D',
-                        'brand-gray': '#B5B5BC'
+                        'brand-gray': '#B5B5BC',
+                        'brand-muted': '#6E6E78',
+                        'brand-border': '#E9E9ED'
                     },
                     fontFamily: {
                         serif: ['"Playfair Display"', 'serif'],
@@ -37,7 +39,10 @@
 <body class="bg-brand-dark text-brand-nude font-sans antialiased overflow-x-hidden">
     <header class="fixed w-full top-0 z-50 bg-brand-dark/80 backdrop-blur-md border-b border-brand-beige transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="font-serif text-2xl font-medium tracking-wide">Claudia Agüero</a>
+            <a href="#" class="flex items-center gap-2.5 font-serif text-2xl font-medium tracking-wide group">
+                <img src="images/logo-lips.svg" alt="Logo" class="w-6 h-9 opacity-90 group-hover:opacity-100 transition-opacity">
+                Claudia Agüero
+            </a>
             <nav class="hidden md:flex gap-8 items-center">
                 <a href="#sobre-mi" class="text-sm uppercase tracking-widest text-brand-gray hover:text-brand-nude transition-colors">Sobre mí</a>
                 <a href="#servicios" class="text-sm uppercase tracking-widest text-brand-gray hover:text-brand-nude transition-colors">Servicios</a>
@@ -76,17 +81,17 @@
             </div>
         </section>
 
-        <section id="sobre-mi" class="py-24 px-6 bg-brand-dark">
+        <section id="sobre-mi" class="py-24 px-6 bg-white">
             <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div class="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] gs-reveal">
+                <div class="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/5] gs-reveal">
                     <img src="images/image9.jpg" alt="Claudia Agüero trabajando" class="object-cover w-full h-full" loading="lazy">
                 </div>
                 <div class="gs-reveal">
-                    <h2 class="font-serif text-4xl md:text-5xl mb-8">Sobre mí</h2>
-                    <p class="text-lg text-brand-gray mb-6 leading-relaxed font-light">
+                    <h2 class="font-serif text-4xl md:text-5xl mb-8 text-brand-dark">Sobre mí</h2>
+                    <p class="text-lg text-brand-muted mb-6 leading-relaxed font-light">
                         Soy Claudia Agüero, maquilladora profesional con años de experiencia ayudando a resaltar la belleza natural de cada persona.
                     </p>
-                    <p class="text-lg text-brand-gray leading-relaxed font-light">
+                    <p class="text-lg text-brand-muted leading-relaxed font-light">
                         Desde 2018, trabajo ofreciendo servicios personalizados adaptados a cada ocasión. Mi enfoque se centra en escuchar a mis clientes para crear looks que no solo se vean increíbles, sino que también los hagan sentir seguros y auténticos.
                     </p>
                 </div>
@@ -103,13 +108,19 @@
             </div>
         </section>
 
-        <section id="galeria" class="py-24 px-6 bg-brand-dark">
+        <section id="galeria" class="py-24 px-6 bg-white">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16 gs-reveal">
-                    <h2 class="font-serif text-4xl md:text-5xl mb-4">Mis trabajos</h2>
-                    <p class="text-brand-gray text-lg font-light">Un vistazo a mis creaciones recientes</p>
+                    <h2 class="font-serif text-4xl md:text-5xl mb-4 text-brand-dark">Mis trabajos</h2>
+                    <p class="text-brand-muted text-lg font-light">Un vistazo a mis creaciones recientes</p>
                 </div>
                 <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6" id="gallery-container"></div>
+                <div id="gallery-toggle" class="text-center mt-12 hidden">
+                    <button id="gallery-toggle-btn" class="inline-flex items-center gap-2 px-8 py-3 bg-brand-dark text-white rounded-full hover:bg-brand-pink transition-all text-sm uppercase tracking-widest shadow-sm hover:shadow-md">
+                        <span>Ver más trabajos</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                    </button>
+                </div>
             </div>
         </section>
 
@@ -130,27 +141,27 @@
             </div>
         </section>
 
-        <section id="contacto" class="py-24 px-6 bg-brand-dark">
+        <section id="contacto" class="py-24 px-6 bg-white">
             <div class="max-w-4xl mx-auto text-center gs-reveal">
-                <h2 class="font-serif text-4xl md:text-5xl mb-8">Reservá tu turno</h2>
-                <p class="text-brand-gray text-lg font-light mb-12">Contactame para consultar disponibilidad y presupuestos.</p>
+                <h2 class="font-serif text-4xl md:text-5xl mb-8 text-brand-dark">Reservá tu turno</h2>
+                <p class="text-brand-muted text-lg font-light mb-12">Contactame para consultar disponibilidad y presupuestos.</p>
                 
                 <div class="flex flex-col sm:flex-row justify-center gap-6">
                     <a href="https://wa.me/542964602903" target="_blank" class="flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] text-white rounded-xl shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
                         <i data-lucide="message-circle" class="w-5 h-5"></i>
                         <span class="font-medium">WhatsApp</span>
                     </a>
-                    <a href="tel:+542964602903" class="flex items-center justify-center gap-3 px-8 py-4 bg-brand-nude text-brand-dark rounded-xl shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+                    <a href="tel:+542964602903" class="flex items-center justify-center gap-3 px-8 py-4 bg-brand-dark text-white rounded-xl shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
                         <i data-lucide="phone" class="w-5 h-5"></i>
                         <span class="font-medium">Llamar</span>
                     </a>
-                    <a href="mailto:claudiaagueromk@hotmail.com" class="flex items-center justify-center gap-3 px-8 py-4 bg-transparent text-brand-nude border border-brand-beige rounded-xl shadow-sm hover:bg-brand-nude hover:text-brand-dark hover:shadow-md transition-all hover:-translate-y-1">
+                    <a href="mailto:claudiaagueromk@hotmail.com" class="flex items-center justify-center gap-3 px-8 py-4 bg-transparent text-brand-dark border border-brand-border rounded-xl shadow-sm hover:bg-brand-dark hover:text-white hover:shadow-md transition-all hover:-translate-y-1">
                         <i data-lucide="mail" class="w-5 h-5"></i>
                         <span class="font-medium">Enviar email</span>
                     </a>
                 </div>
                 
-                <div class="mt-12 text-brand-gray">
+                <div class="mt-12 text-brand-muted">
                     <p>+54 2964 602903</p>
                     <p>claudiaagueromk@hotmail.com</p>
                 </div>
@@ -185,7 +196,10 @@
     <footer class="bg-brand-dark text-brand-nude py-16 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
             <div>
-                <h4 class="font-serif text-2xl mb-2">Claudia Agüero</h4>
+                <div class="flex items-center gap-2.5 mb-2">
+                    <img src="images/logo-lips.svg" alt="Logo" class="w-5 h-8 opacity-80">
+                    <h4 class="font-serif text-2xl">Claudia Agüero</h4>
+                </div>
                 <p class="text-brand-nude/60 text-sm">Maquillaje profesional</p>
             </div>
             <div class="flex flex-col gap-3 items-center md:items-start">
@@ -208,10 +222,15 @@
     </footer>
 
     <div id="lightbox" class="fixed inset-0 z-[100] bg-brand-dark/95 backdrop-blur-sm hidden opacity-0 flex items-center justify-center transition-opacity duration-300">
-        <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-brand-gray transition-colors">
+        <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-brand-gray transition-colors z-10">
             <i data-lucide="x" class="w-8 h-8"></i>
         </button>
-        <img id="lightbox-img" src="" alt="Ampliación" class="max-h-[90vh] max-w-[90vw] object-contain rounded-lg shadow-2xl scale-95 transition-transform duration-300">
+        <div class="flex flex-col items-center max-h-[92vh] max-w-[92vw]">
+            <img id="lightbox-img" src="" alt="Ampliación" class="max-h-[80vh] max-w-[90vw] object-contain rounded-t-xl shadow-2xl scale-95 transition-transform duration-300">
+            <div id="lightbox-caption" class="w-full bg-brand-dark/90 backdrop-blur-md rounded-b-xl px-6 py-4 border-t border-white/10">
+                <p id="lightbox-title" class="text-brand-nude font-serif text-lg text-center"></p>
+            </div>
+        </div>
     </div>
 
     <script type="module" src="main.js"></script>

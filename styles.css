@@ -2,6 +2,38 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Smooth transitions between dark/light sections */
+section {
+    position: relative;
+}
+
+#sobre-mi::before,
+#galeria::before,
+#contacto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, rgba(11, 11, 13, 0.06), transparent);
+    pointer-events: none;
+    z-index: 1;
+}
+
+#servicios::before,
+#ubicacion::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.04), transparent);
+    pointer-events: none;
+    z-index: 1;
+}
+
 .gallery-item {
     break-inside: avoid;
     margin-bottom: 1.5rem;
@@ -30,8 +62,17 @@ html {
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.05), 0 8px 10px -6px rgb(0 0 0 / 0.05);
 }
 
-.service-icon-wrapper {
-    transition: all 0.4s ease;
+.service-card:hover .service-icon-wrapper {
+    transform: scale(1.1);
+}
+
+/* Logo animation */
+header .group:hover img {
+    transform: scale(1.1) rotate(-3deg);
+}
+
+header .group img {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
 }
 
 #lightbox.active {
@@ -41,4 +82,29 @@ html {
 
 #lightbox.active #lightbox-img {
     transform: scale(1);
+}
+
+#lightbox-caption {
+    transition: opacity 0.3s ease;
+    max-width: 90vw;
+}
+
+#gallery-toggle-btn i {
+    transition: transform 0.3s ease;
+}
+
+/* Gallery expand animation */
+.gallery-item {
+    animation: fadeInUp 0.5s ease both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

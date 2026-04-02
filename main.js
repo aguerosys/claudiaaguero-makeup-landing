@@ -2,18 +2,18 @@ import { services, gallery, reviews } from './data.js';
 import { initAnimations } from './animations.js';
 import { initGallery } from './gallery.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+const API_BASE_URL = 'http://localhost:8585';
+
+document.addEventListener('DOMContentLoaded', async () => {
     lucide.createIcons();
     renderServices();
     renderReviews();
-    renderGallery();
+    await renderGallery();
     setupMobileMenu();
     setupNavbar();
-    
-    setTimeout(() => {
-        initAnimations();
-        initGallery();
-    }, 100);
+
+    initAnimations();
+    initGallery();
 });
 
 function renderServices() {
@@ -44,13 +44,62 @@ function renderReviews() {
     lucide.createIcons();
 }
 
-function renderGallery() {
+async function renderGallery() {
     const container = document.getElementById('gallery-container');
-    container.innerHTML = gallery.map(url => `
-        <div class="gallery-item gs-reveal bg-brand-beige">
-            <img src="${url}" alt="Trabajo de maquillaje" loading="lazy">
+    const toggleWrapper = document.getElementById('gallery-toggle');
+    const toggleBtn = document.getElementById('gallery-toggle-btn');
+    const INITIAL_LIMIT = 8;
+
+    let urls = gallery.map(url => ({ url, alt: 'Trabajo de maquillaje', title: '' }));
+
+    try {
+        const res = await fetch(`${API_BASE_URL}/api/works`, { headers: { 'Accept': 'application/json' } });
+        console.log('Fetch response:', res);
+        if (!res.ok) throw new Error('Request failed');
+        const json = await res.json();
+        const data = Array.isArray(json?.data) ? json.data : [];
+        if (data.length > 0) {
+            urls = data.map(item => ({
+                url: item.url,
+                alt: item.alt || 'Trabajo de maquillaje',
+                title: item.title || item.alt || ''
+            }));
+        }
+    } catch (error) {
+
+        console.error('Error fetching gallery data, using fallback:', error);
+    }
+
+    const buildItem = (item, index) => `
+        <div class="gallery-item gs-reveal bg-brand-border shadow-sm ${index >= INITIAL_LIMIT ? 'gallery-extra hidden' : ''}" data-title="${item.title}">
+            <img src="${item.url}" alt="${item.alt}" loading="lazy">
         </div>
-    `).join('');
+    `;
+
+    container.innerHTML = urls.map((item, i) => buildItem(item, i)).join('');
+
+    if (urls.length > INITIAL_LIMIT) {
+        toggleWrapper.classList.remove('hidden');
+        lucide.createIcons();
+
+        let expanded = false;
+        toggleBtn.addEventListener('click', () => {
+            expanded = !expanded;
+            const extras = container.querySelectorAll('.gallery-extra');
+
+            if (expanded) {
+                extras.forEach(el => el.classList.remove('hidden'));
+                toggleBtn.querySelector('span').textContent = 'Ver menos';
+                toggleBtn.querySelector('i').style.transform = 'rotate(180deg)';
+                initAnimations();
+            } else {
+                extras.forEach(el => el.classList.add('hidden'));
+                toggleBtn.querySelector('span').textContent = 'Ver m\u00e1s trabajos';
+                toggleBtn.querySelector('i').style.transform = 'rotate(0deg)';
+                document.getElementById('galeria').scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
 }
 
 function setupMobileMenu() {

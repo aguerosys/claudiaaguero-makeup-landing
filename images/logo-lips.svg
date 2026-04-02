@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 120" fill="none">
+  <defs>
+    <linearGradient id="caseGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="35%" stop-color="#2d2d2d"/>
+      <stop offset="50%" stop-color="#3a3a3a"/>
+      <stop offset="65%" stop-color="#2d2d2d"/>
+      <stop offset="100%" stop-color="#1a1a1a"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8B1A1A"/>
+      <stop offset="30%" stop-color="#C0392B"/>
+      <stop offset="50%" stop-color="#D44337"/>
+      <stop offset="70%" stop-color="#C0392B"/>
+      <stop offset="100%" stop-color="#8B1A1A"/>
+    </linearGradient>
+    <linearGradient id="tipGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D44337"/>
+      <stop offset="100%" stop-color="#A93226"/>
+    </linearGradient>
+    <linearGradient id="capGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#111"/>
+      <stop offset="35%" stop-color="#222"/>
+      <stop offset="50%" stop-color="#2a2a2a"/>
+      <stop offset="65%" stop-color="#222"/>
+      <stop offset="100%" stop-color="#111"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#fff" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#fff" stop-opacity="0.22"/>
+      <stop offset="60%" stop-color="#fff" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="goldRing" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8B7355"/>
+      <stop offset="30%" stop-color="#D4AF72"/>
+      <stop offset="50%" stop-color="#E8C98A"/>
+      <stop offset="70%" stop-color="#D4AF72"/>
+      <stop offset="100%" stop-color="#8B7355"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Lipstick body tilted ~15° -->
+  <g transform="translate(30,60) rotate(-15) translate(-30,-60)">
+
+    <!-- Cap (bottom) -->
+    <rect x="17" y="68" width="26" height="42" rx="3" fill="url(#capGrad)"/>
+    <rect x="17" y="68" width="26" height="42" rx="3" fill="url(#shine)"/>
+    <!-- Cap bottom round -->
+    <rect x="17" y="105" width="26" height="5" rx="2.5" fill="#0d0d0d"/>
+
+    <!-- Gold band between cap and body -->
+    <rect x="16" y="64" width="28" height="5" rx="1.5" fill="url(#goldRing)"/>
+
+    <!-- Body / case -->
+    <rect x="17" y="34" width="26" height="31" rx="2" fill="url(#caseGrad)"/>
+    <rect x="17" y="34" width="26" height="31" rx="2" fill="url(#shine)"/>
+
+    <!-- Gold ring at top of case -->
+    <rect x="16.5" y="31" width="27" height="4" rx="1.5" fill="url(#goldRing)"/>
+
+    <!-- Lipstick bullet (red part) -->
+    <rect x="19" y="14" width="22" height="18" rx="1" fill="url(#redGrad)"/>
+    <rect x="19" y="14" width="22" height="18" rx="1" fill="url(#shine)"/>
+
+    <!-- Angled tip -->
+    <path d="M19 14 L19 10 C19 6, 25 2, 30 1 C35 2, 41 6, 41 10 L41 14 Z" fill="url(#tipGrad)"/>
+    <path d="M19 14 L19 10 C19 6, 25 2, 30 1 C35 2, 41 6, 41 10 L41 14 Z" fill="url(#shine)"/>
+
+    <!-- Diagonal cut on tip -->
+    <path d="M19 10 C19 6, 25 2, 30 1 L30 8 C25 8, 21 9, 19 10Z" fill="white" opacity="0.08"/>
+
+    <!-- Highlight streak on red -->
+    <rect x="25" y="5" width="3" height="24" rx="1.5" fill="white" opacity="0.1"/>
+
+    <!-- Highlight streak on case -->
+    <rect x="25" y="34" width="2.5" height="28" rx="1.25" fill="white" opacity="0.07"/>
+
+  </g>
+</svg>
