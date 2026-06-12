@@ -29,12 +29,11 @@ function animateHeroDetails() {
     timeline.from('.hero-copy > *', { y: 32, opacity: 0, duration: 0.7, stagger: 0.08 });
 }
 
-export function initAnimations() {
-    // GSAP se carga desde CDN, asegúrate que esté disponible
+export function initAnimations(retries = 0) {
     if (typeof gsap === 'undefined' || !gsap.registerPlugin) {
-        console.warn('GSAP no está disponible aún');
-        // Reintentar después de un pequeño delay
-        setTimeout(initAnimations, 100);
+        if (retries < 20) {
+            setTimeout(() => initAnimations(retries + 1), 150);
+        }
         return;
     }
 
