@@ -1,0 +1,214 @@
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--color-muted-soft);
+}
+
+.eyebrow::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, var(--color-red), var(--color-red-deep));
+    box-shadow: 0 0 18px rgba(192, 57, 43, 0.45);
+}
+
+.heading-xl,
+.heading-lg,
+.heading-md {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+}
+
+.heading-xl {
+    font-size: clamp(3.2rem, 7vw, 6.1rem);
+    line-height: 0.96;
+}
+
+.heading-lg {
+    font-size: clamp(2.2rem, 4.3vw, 3.75rem);
+}
+
+.heading-md {
+    font-size: clamp(1.45rem, 2.2vw, 2rem);
+}
+
+.card-title {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.2rem, 1.5vw, 1.55rem);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+
+.section-rating {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.55rem, 2.4vw, 2.1rem);
+    line-height: 1.1;
+}
+
+.lead,
+.copy,
+.muted {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.lead {
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--color-muted-soft);
+}
+
+.copy {
+    color: var(--color-muted);
+    font-size: 1rem;
+}
+
+.copy-sm {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.muted {
+    color: var(--color-muted-soft);
+}
+
+.accent {
+    color: var(--color-gold);
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.button,
+.button-secondary,
+.button-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 54px;
+    padding: 0 24px;
+    border-radius: 999px;
+    transition: transform var(--transition), background-color var(--transition), border-color var(--transition), box-shadow var(--transition), color var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    font-size: 0.76rem;
+}
+
+.button {
+    background: var(--color-light);
+    color: var(--color-dark);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.14);
+}
+
+.button:hover,
+.button-secondary:hover,
+.button-ghost:hover {
+    transform: translateY(-2px);
+}
+
+.button-secondary {
+    background: linear-gradient(180deg, var(--color-red), var(--color-red-deep));
+    color: white;
+    box-shadow: 0 20px 40px rgba(139, 26, 26, 0.26);
+}
+
+.button-ghost {
+    color: inherit;
+    border: 1px solid currentColor;
+    background: transparent;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--color-shadow);
+}
+
+.card-light {
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid rgba(17, 17, 20, 0.08);
+    box-shadow: 0 30px 80px rgba(17, 17, 20, 0.08);
+}
+
+.stat-chip,
+.tag,
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border-radius: 999px;
+}
+
+.stat-chip {
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tag {
+    padding: 9px 14px;
+    background: rgba(17, 17, 20, 0.04);
+    color: var(--color-muted);
+    border: 1px solid rgba(17, 17, 20, 0.08);
+    font-size: 0.85rem;
+}
+
+.pill {
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-muted-soft);
+}
+
+.icon-button {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: inline-grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform var(--transition), background-color var(--transition);
+}
+
+.icon-button:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 720px) {
+    .actions {
+        flex-direction: column;
+    }
+
+    .button,
+    .button-secondary,
+    .button-ghost {
+        width: 100%;
+    }
+}

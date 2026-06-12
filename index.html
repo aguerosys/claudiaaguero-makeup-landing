@@ -1,238 +1,396 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make-Up de Claudia Agüero | Maquillaje Profesional</title>
-    <meta name="description" content="Maquillaje profesional para eventos, sesiones y ocasiones especiales en Río Grande. Resaltá tu belleza natural con Claudia Agüero.">
+    <title>Claudia Agüero Make-Up | Maquillaje profesional</title>
+    <meta name="description" content="Maquillaje profesional para eventos, sesiones y ocasiones especiales en Río Grande. Una landing más editorial, dinámica y enfocada en convertir visitas en consultas.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'brand-nude': '#F7F7F9',
-                        'brand-pink': '#121216',
-                        'brand-beige': '#232327',
-                        'brand-gold': '#E6E6EA',
-                        'brand-dark': '#0B0B0D',
-                        'brand-gray': '#B5B5BC',
-                        'brand-muted': '#6E6E78',
-                        'brand-border': '#E9E9ED'
-                    },
-                    fontFamily: {
-                        serif: ['"Playfair Display"', 'serif'],
-                        sans: ['"DM Sans"', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles/main.css?v=8">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
-<body class="bg-brand-dark text-brand-nude font-sans antialiased overflow-x-hidden">
-    <header class="fixed w-full top-0 z-50 bg-brand-dark/80 backdrop-blur-md border-b border-brand-beige transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2.5 font-serif text-2xl font-medium tracking-wide group">
-                <img src="images/logo-lips.svg" alt="Logo" class="w-6 h-9 opacity-90 group-hover:opacity-100 transition-opacity">
-                Claudia Agüero
-            </a>
-            <nav class="hidden md:flex gap-8 items-center">
-                <a href="#sobre-mi" class="text-sm uppercase tracking-widest text-brand-gray hover:text-brand-nude transition-colors">Sobre mí</a>
-                <a href="#servicios" class="text-sm uppercase tracking-widest text-brand-gray hover:text-brand-nude transition-colors">Servicios</a>
-                <a href="#galeria" class="text-sm uppercase tracking-widest text-brand-gray hover:text-brand-nude transition-colors">Galería</a>
-                <a href="#contacto" class="text-sm uppercase tracking-widest bg-brand-nude text-brand-dark px-5 py-2 rounded-full hover:bg-brand-gray transition-colors">Reservar</a>
+<body>
+    <header class="site-header" id="navbar">
+        <div class="container">
+            <div class="nav-shell">
+                <a href="#inicio" class="brand" aria-label="Ir al inicio">
+                    <img src="images/logo-lips.svg" alt="Logo Claudia Agüero">
+                    <span>Claudia Agüero</span>
+                </a>
+
+                <nav class="desktop-nav" aria-label="Principal">
+                    <a href="#sobre-mi">Sobre mí</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#coordinacion">Coordinación</a>
+                    <a href="#galeria">Trabajos</a>
+                    <a href="#contacto" class="button">Reservar</a>
+                </nav>
+
+                <button class="mobile-toggle icon-button" id="menu-btn" aria-label="Abrir menú">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+
+            <nav class="mobile-menu" id="mobile-menu" aria-label="Móvil">
+                <a href="#sobre-mi" class="mobile-link">Sobre mí</a>
+                <a href="#servicios" class="mobile-link">Servicios</a>
+                <a href="#coordinacion" class="mobile-link">Coordinación</a>
+                <a href="#galeria" class="mobile-link">Trabajos</a>
+                <a href="#contacto" class="mobile-link">Reservar</a>
             </nav>
-            <button class="md:hidden text-brand-nude" id="menu-btn">
-                <i data-lucide="menu"></i>
-            </button>
-        </div>
-        <div id="mobile-menu" class="hidden absolute top-20 left-0 w-full bg-brand-dark border-b border-brand-beige flex-col items-center py-6 gap-6 md:hidden">
-            <a href="#sobre-mi" class="text-sm uppercase tracking-widest text-brand-gray hover:text-brand-nude mobile-link">Sobre mí</a>
-            <a href="#servicios" class="text-sm uppercase tracking-widest text-brand-gray hover:text-brand-nude mobile-link">Servicios</a>
-            <a href="#galeria" class="text-sm uppercase tracking-widest text-brand-gray hover:text-brand-nude mobile-link">Galería</a>
-            <a href="#contacto" class="text-sm uppercase tracking-widest text-brand-gray hover:text-brand-nude mobile-link">Contacto</a>
         </div>
     </header>
 
     <main>
-        <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-            <div class="absolute inset-0 z-0 opacity-35 bg-[url('./images/imagen1.jpg')] bg-cover bg-center"></div>
-            <div class="absolute inset-0 bg-gradient-to-b from-brand-dark/40 via-brand-dark/85 to-brand-dark z-0"></div>
-            
-            <div class="relative z-10 max-w-4xl mx-auto px-6 text-center gs-reveal">
+        <section class="hero section-dark" id="inicio">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-copy">
+                        <!-- <span class="eyebrow">Río Grande · Makeup artist</span> -->
+                        <h1 class="heading-xl">Claudia Aguero MAKE-UP.</h1>
+                        <p class="lead">Looks para eventos, sesiones y ocasiones especiales, con un acabado prolijo, femenino y natural frente a cámara y en persona.</p>
+                        <div class="actions">
+                            <a href="#contacto" class="button-secondary">Reservar turno</a>
+                            <a href="#galeria" class="button-ghost">Ver trabajos</a>
+                        </div>
+                    </div>
 
-                <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 font-semibold leading-[0.95] tracking-tight">
-                    Make-Up de<br/><span class="text-brand-gold">Claudia Agüero</span>
-                </h1>
-                <p class="font-sans text-lg md:text-xl mb-4 text-brand-gray font-light italic">"Resaltá tu belleza con maquillaje profesional."</p>
-                <p class="text-lg text-brand-gray mb-10 max-w-2xl mx-auto font-light">Maquillaje profesional para eventos, sesiones y ocasiones especiales. Diseñado para realzar tu esencia natural.</p>
-                
-                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="#contacto" class="w-full sm:w-auto px-8 py-4 bg-brand-nude text-brand-dark rounded-full hover:bg-brand-gray transition-all shadow-lg hover:shadow-xl text-sm uppercase tracking-widest text-center">Reservar turno</a>
-                    <a href="#galeria" class="w-full sm:w-auto px-8 py-4 bg-transparent border border-brand-nude text-brand-nude rounded-full hover:bg-brand-nude hover:text-brand-dark transition-all text-sm uppercase tracking-widest text-center">Ver trabajos</a>
+                </div>
+            </div>
+
+            <div class="hero-marquee" aria-hidden="true">
+                <div class="marquee-inner">
+                    <div class="marquee-track">
+                        <span>Glow natural</span>
+                        <span>Maquillaje social</span>
+                        <span>Editorial beauty</span>
+                        <span>Eventos especiales</span>
+                        <span>Prueba previa</span>
+                        <span>Asistencia backstage</span>
+                        <span>Maquillaje de novia</span>
+                        <span>Quinceañeras</span>
+                        <span>Coordinación de día</span>
+                        <span>Skin prep</span>
+                        <span>Glow natural</span>
+                        <span>Maquillaje social</span>
+                        <span>Editorial beauty</span>
+                        <span>Eventos especiales</span>
+                        <span>Prueba previa</span>
+                        <span>Asistencia backstage</span>
+                    </div>
+                    <div class="marquee-track">
+                        <span>Glow natural</span>
+                        <span>Maquillaje social</span>
+                        <span>Editorial beauty</span>
+                        <span>Eventos especiales</span>
+                        <span>Prueba previa</span>
+                        <span>Asistencia backstage</span>
+                        <span>Maquillaje de novia</span>
+                        <span>Quinceañeras</span>
+                        <span>Coordinación de día</span>
+                        <span>Skin prep</span>
+                        <span>Glow natural</span>
+                        <span>Maquillaje social</span>
+                        <span>Editorial beauty</span>
+                        <span>Eventos especiales</span>
+                        <span>Prueba previa</span>
+                        <span>Asistencia backstage</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="sobre-mi" class="py-24 px-6 bg-white">
-            <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div class="relative rounded-2xl overflow-hidden shadow-xl aspect-[4/5] gs-reveal">
-                    <img src="images/image9.jpg" alt="Claudia Agüero trabajando" class="object-cover w-full h-full" loading="lazy">
-                </div>
-                <div class="gs-reveal">
-                    <h2 class="font-serif text-4xl md:text-5xl mb-8 text-brand-dark">Sobre mí</h2>
-                    <p class="text-lg text-brand-muted mb-6 leading-relaxed font-light">
-                        Soy Claudia Agüero, maquilladora profesional con años de experiencia ayudando a resaltar la belleza natural de cada persona.
-                    </p>
-                    <p class="text-lg text-brand-muted leading-relaxed font-light">
-                        Desde 2018, trabajo ofreciendo servicios personalizados adaptados a cada ocasión. Mi enfoque se centra en escuchar a mis clientes para crear looks que no solo se vean increíbles, sino que también los hagan sentir seguros y auténticos.
-                    </p>
+        <section class="section section-light" id="sobre-mi">
+            <div class="container about-grid">
+                <article class="about-photo card card-light gs-reveal">
+                    <img src="images/image9.jpg" alt="Claudia Agüero trabajando en maquillaje profesional">
+                    <div class="about-badge">
+                        <span class="pill">+30 años</span>
+                        <strong>Formación junto a las marcas de maquillaje más reconocidas del mundo.</strong>
+                    </div>
+                </article>
+
+                <div class="about-content gs-reveal">
+                    <span class="eyebrow">Sobre mí</span>
+                    <h2 class="heading-lg">Más de 30 años formando el look que te representa.</h2>
+                    <p class="copy">Con más de 30 años de trayectoria en el mundo de la cosmética y el maquillaje profesional, mi misión es que te sientas segura, radiante y sin estrés el día de tu evento.</p>
+                    <p class="copy">Me formé en Company Importación SRL y Duty Free Shop Atlántico Sur junto a los mejores equipos de <em>Lancôme, Christian Dior, Estée Lauder, Biotherm, Guerlain, Chanel, Yves Saint Laurent, Revlon, Paloma Picasso</em> y más. Hoy sigo capacitándome con referentes del sector para ofrecerte siempre un servicio moderno y vigente.</p>
+                    <div class="about-highlights">
+                        <article class="highlight-card card-light gs-reveal">
+                            <span class="pill">Mary Kay</span>
+                            <h3 class="card-title">Directora independiente</h3>
+                            <p class="copy">Más de 25 años liderando consultoras y asesorando clientas a lo largo de toda su trayectoria.</p>
+                        </article>
+                        <article class="highlight-card card-light gs-reveal">
+                            <span class="pill">Hoy</span>
+                            <h3 class="card-title">Multimarcas</h3>
+                            <p class="copy">Maquillaje social, novias, quinceañeras y coordinación de evento, combinando décadas de experiencia en cada look.</p>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="servicios" class="py-24 px-6 bg-brand-pink">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 gs-reveal">
-                    <h2 class="font-serif text-4xl md:text-5xl mb-4">Servicios</h2>
-                    <p class="text-brand-gray text-lg font-light">Atención personalizada para cada necesidad</p>
+        <section class="section section-dark" id="servicios">
+            <div class="container services-panel">
+                <div class="services-feature gs-reveal">
+                    <span class="eyebrow">Servicios</span>
+                    <h2 class="heading-lg">Cada ocasión, un look.</h2>
+                    <p class="lead">Maquillaje social, novias, quinceañeras, producción y más. Cada trabajo se adapta a quien lo lleva.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="services-container"></div>
+
+                <div class="services-grid" id="services-container"></div>
             </div>
         </section>
 
-        <section id="galeria" class="py-24 px-6 bg-white">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-16 gs-reveal">
-                    <h2 class="font-serif text-4xl md:text-5xl mb-4 text-brand-dark">Mis trabajos</h2>
-                    <p class="text-brand-muted text-lg font-light">Un vistazo a mis creaciones recientes</p>
+        <section class="section section-light" id="galeria">
+            <div class="container gallery-layout">
+                <div class="gallery-section-header gs-reveal">
+                    <span class="eyebrow">Mis trabajos</span>
+                    <h2 class="heading-lg">El trabajo habla solo.</h2>
                 </div>
-                <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6" id="gallery-container"></div>
-                <div id="gallery-toggle" class="text-center mt-12 hidden">
-                    <button id="gallery-toggle-btn" class="inline-flex items-center gap-2 px-8 py-3 bg-brand-dark text-white rounded-full hover:bg-brand-pink transition-all text-sm uppercase tracking-widest shadow-sm hover:shadow-md">
-                        <span>Ver más trabajos</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4"></i>
+
+                <div class="gallery-grid" id="gallery-container"></div>
+
+                <div class="gallery-toggle" id="gallery-toggle">
+                    <button id="gallery-toggle-btn" class="button-secondary" data-gallery-key="works">
+                        <span id="gallery-toggle-label">Ver más trabajos</span>
+                        <i id="gallery-toggle-icon" data-lucide="chevron-down"></i>
                     </button>
                 </div>
             </div>
         </section>
 
-        <section class="py-24 px-6 bg-brand-pink">
-            <div class="max-w-6xl mx-auto">
-                <div class="text-center mb-16 gs-reveal">
-                    <div class="flex justify-center mb-4">
-                        <i data-lucide="star" class="w-6 h-6 text-brand-gold fill-brand-gold"></i>
-                        <i data-lucide="star" class="w-6 h-6 text-brand-gold fill-brand-gold"></i>
-                        <i data-lucide="star" class="w-6 h-6 text-brand-gold fill-brand-gold"></i>
-                        <i data-lucide="star" class="w-6 h-6 text-brand-gold fill-brand-gold"></i>
-                        <i data-lucide="star" class="w-6 h-6 text-brand-gold fill-brand-gold"></i>
+        <section class="section section-dark" id="productos">
+            <div class="container gallery-layout">
+                <div class="gallery-section-header gs-reveal">
+                    <span class="eyebrow">Productos</span>
+                    <h2 class="heading-lg">Las marcas que uso.</h2>
+                </div>
+
+                <div class="gallery-grid" id="products-container"></div>
+
+                <div class="gallery-toggle" id="products-toggle">
+                    <button id="products-toggle-btn" class="button-ghost" data-gallery-key="products">
+                        <span id="products-toggle-label">Ver más productos</span>
+                        <i id="products-toggle-icon" data-lucide="chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-light" id="resenas">
+            <div class="container">
+                <div class="reviews-header gs-reveal">
+                    <div class="review-stars review-stars--lg">
+                        <i data-lucide="star" class="fill-current"></i>
+                        <i data-lucide="star" class="fill-current"></i>
+                        <i data-lucide="star" class="fill-current"></i>
+                        <i data-lucide="star" class="fill-current"></i>
+                        <i data-lucide="star" class="fill-current"></i>
                     </div>
-                    <h2 class="font-serif text-4xl md:text-5xl mb-4">Reseñas</h2>
-                    <p class="text-brand-gray text-lg font-light">Calificación global 4.8</p>
+                    <h2 class="heading-lg">Lo que dicen mis clientas.</h2>
+                    <p class="lead">4.8 / 5 · experiencias reales</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="reviews-container"></div>
+                <div class="reviews-grid" id="reviews-container"></div>
             </div>
         </section>
 
-        <section id="contacto" class="py-24 px-6 bg-white">
-            <div class="max-w-4xl mx-auto text-center gs-reveal">
-                <h2 class="font-serif text-4xl md:text-5xl mb-8 text-brand-dark">Reservá tu turno</h2>
-                <p class="text-brand-muted text-lg font-light mb-12">Contactame para consultar disponibilidad y presupuestos.</p>
-                
-                <div class="flex flex-col sm:flex-row justify-center gap-6">
-                    <a href="https://wa.me/542964602903" target="_blank" class="flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] text-white rounded-xl shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
-                        <i data-lucide="message-circle" class="w-5 h-5"></i>
-                        <span class="font-medium">WhatsApp</span>
+        <section class="section section-dark" id="coordinacion">
+            <div class="container">
+                <div class="coord-header gs-reveal">
+                    <span class="eyebrow">Coordinación de Día</span>
+                    <h2 class="heading-lg">El día de tu evento, yo me ocupo del resto.</h2>
+                    <p class="lead">Asistencia personalizada para novias, quinceañeras y eventos. Para que vos disfrutes cada momento sin preocuparte por nada.</p>
+                </div>
+
+                <div class="coord-ctas gs-reveal">
+                    <a href="https://wa.me/542964602903?text=Hola!%20Me%20interesa%20el%20servicio%20de%20Asistencia%20Personal%20para%20Novia." target="_blank" class="coord-btn">
+                        <i data-lucide="heart"></i>
+                        Asistencia para Novia
                     </a>
-                    <a href="tel:+542964602903" class="flex items-center justify-center gap-3 px-8 py-4 bg-brand-dark text-white rounded-xl shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
-                        <i data-lucide="phone" class="w-5 h-5"></i>
-                        <span class="font-medium">Llamar</span>
+                    <a href="https://wa.me/542964602903?text=Hola!%20Me%20interesa%20el%20servicio%20de%20Acompa%C3%B1amiento%20para%20Quincea%C3%B1era." target="_blank" class="coord-btn">
+                        <i data-lucide="star"></i>
+                        Acompañamiento para Quince
                     </a>
-                    <a href="mailto:claudiaagueromk@hotmail.com" class="flex items-center justify-center gap-3 px-8 py-4 bg-transparent text-brand-dark border border-brand-border rounded-xl shadow-sm hover:bg-brand-dark hover:text-white hover:shadow-md transition-all hover:-translate-y-1">
-                        <i data-lucide="mail" class="w-5 h-5"></i>
-                        <span class="font-medium">Enviar email</span>
+                    <a href="https://wa.me/542964602903?text=Hola!%20Quiero%20consultar%20por%20Coordinaci%C3%B3n%20de%20D%C3%ADa." target="_blank" class="coord-btn coord-btn--outline">
+                        <i data-lucide="calendar"></i>
+                        Consultar Coordinación
                     </a>
                 </div>
-                
-                <div class="mt-12 text-brand-muted">
-                    <p>+54 2964 602903</p>
-                    <p>claudiaagueromk@hotmail.com</p>
+
+                <div class="coord-services gs-reveal">
+                    <article class="coord-card card">
+                        <div class="service-icon"><i data-lucide="calendar-check"></i></div>
+                        <p class="coord-card-label">Coordinación de Día</p>
+                        <p class="copy-sm">Me encargo de que el día de tu evento salga según lo planeado, sin que vos ni tu familia tengan que preocuparse por horarios o imprevistos.</p>
+                    </article>
+                    <article class="coord-card card">
+                        <div class="service-icon"><i data-lucide="heart"></i></div>
+                        <p class="coord-card-label">Asistencia para Novia</p>
+                        <p class="copy-sm">Estoy con vos desde el getting ready hasta la ceremonia. Kit de emergencia, tiempos y llegada puntual. Solo tu momento.</p>
+                    </article>
+                    <article class="coord-card card">
+                        <div class="service-icon"><i data-lucide="sparkles"></i></div>
+                        <p class="coord-card-label">Acompañamiento Quinceañera</p>
+                        <p class="copy-sm">Acompaño a la quince y a su mamá durante toda la preparación: vestido, corset y protocolo de ingreso, sin nervios.</p>
+                    </article>
+                    <article class="coord-card card">
+                        <div class="service-icon"><i data-lucide="user-check"></i></div>
+                        <p class="coord-card-label">Coordinación para Novio</p>
+                        <p class="copy-sm">Me ocupo de que el novio y su equipo lleguen a tiempo y listos. Traje, corbata, moño y tiempos coordinados.</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="ubicacion" class="h-96 w-full relative bg-brand-pink gs-reveal">
-            <div class="absolute top-6 left-6 z-10 pointer-events-none">
-                <div class="bg-brand-dark px-8 py-6 rounded-2xl shadow-xl text-center border border-brand-beige">
-                    <h3 class="font-serif text-2xl mb-2">Dónde encontrarme</h3>
-                    <p class="text-brand-gray flex items-center justify-center gap-2">
-                        <i data-lucide="map-pin" class="w-4 h-4"></i>
-                        Río Grande, Tierra del Fuego
-                    </p>
+        <section class="section section-light packages-section" id="paquetes">
+            <div class="container">
+                <div class="packages-header gs-reveal">
+                    <span class="eyebrow eyebrow--gold">Paquetes</span>
+                    <h2 class="heading-lg">El paquete que se ajusta a tu evento.</h2>
+                    <p class="lead">Cada paquete incluye coordinación profesional, kit de emergencia y atención personalizada.</p>
+                </div>
+
+                <div class="packages-grid gs-reveal">
+                    <article class="package-card card">
+                        <div class="package-tier">
+                            <span class="package-label">Estándar</span>
+                        </div>
+                        <p class="package-name">Coordinación Día</p>
+                        <ul class="package-list">
+                            <li>Organización de tiempos y equipo</li>
+                            <li>Kit de emergencia</li>
+                            <li>Asistencia hasta inicio de ceremonia</li>
+                        </ul>
+                        <a href="https://wa.me/542964602903?text=Hola!%20Quiero%20consultar%20el%20Paquete%20Est%C3%A1ndar%20de%20Coordinaci%C3%B3n." target="_blank" class="package-cta">Consultar precio</a>
+                    </article>
+                    <article class="package-card card package-card--featured">
+                        <div class="package-tier">
+                            <span class="package-label">Completo</span>
+                        </div>
+                        <p class="package-name">Novia Completo</p>
+                        <ul class="package-list">
+                            <li>Todo lo del Estándar</li>
+                            <li>Asistencia en getting ready</li>
+                            <li>Ayuda con vestido y accesorios</li>
+                            <li>Prueba de maquillaje incluida</li>
+                        </ul>
+                        <a href="https://wa.me/542964602903?text=Hola!%20Quiero%20consultar%20el%20Paquete%20Completo%20de%20Coordinaci%C3%B3n." target="_blank" class="package-cta">Consultar precio</a>
+                    </article>
+                    <article class="package-card card">
+                        <div class="package-tier">
+                            <span class="package-label">Premium</span>
+                        </div>
+                        <p class="package-name">Novia Premium</p>
+                        <ul class="package-list">
+                            <li>Asistencia exclusiva 1 a 1</li>
+                            <li>Coordinación full day</li>
+                            <li>Acompañamiento a familia y damas</li>
+                            <li>Prueba + tratamientos pre-evento</li>
+                        </ul>
+                        <a href="https://wa.me/542964602903?text=Hola!%20Quiero%20consultar%20el%20Paquete%20Premium%20de%20Coordinaci%C3%B3n." target="_blank" class="package-cta">Consultar precio</a>
+                    </article>
+                </div>
+
+                <p class="packages-note gs-reveal">Los precios se cotizan según fecha, lugar y horas. Escribime por WhatsApp para consultar.</p>
+            </div>
+        </section>
+
+        <section class="section section-dark" id="contacto">
+            <div class="container contact-centered gs-reveal">
+                <span class="eyebrow">Contacto</span>
+                <h2 class="heading-lg contact-title">Reservá tu turno.</h2>
+                <p class="lead contact-subtitle">Contactame para consultar disponibilidad y presupuestos.</p>
+
+                <div class="contact-ctas">
+                    <a href="https://wa.me/542964602903" target="_blank" class="cta-whatsapp">
+                        <i data-lucide="message-circle"></i>
+                        WhatsApp
+                    </a>
+                    <a href="tel:+542964602903" class="cta-call">
+                        <i data-lucide="phone"></i>
+                        Llamar
+                    </a>
+                    <a href="mailto:claudiaagueromk@hotmail.com" class="cta-email">
+                        <i data-lucide="mail"></i>
+                        Enviar email
+                    </a>
+                </div>
+
+                <div class="contact-info">
+                    <span>+54 2964 602903</span>
+                    <span>claudiaagueromk@hotmail.com</span>
                 </div>
             </div>
-            <div class="w-full h-full bg-brand-pink">
-                <iframe
-                    title="Google Maps"
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1179.0039518947801!2d-67.70619594198358!3d-53.77154663368838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1773719724301!5m2!1ses!2sar"
-                    width="100%"
-                    height="100%"
-                    class="w-full h-full"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+        <section class="section section-light location-section" id="ubicacion">
+            <div class="container location-header gs-reveal">
+                <span class="eyebrow eyebrow--dark">Ubicación</span>
+                <div class="location-meta">
+                    <h2 class="card-title">Río Grande, Tierra del Fuego</h2>
+                </div>
             </div>
+            <iframe
+                class="location-map"
+                title="Google Maps"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1179.0039518947801!2d-67.70619594198358!3d-53.77154663368838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1773719724301!5m2!1ses!2sar"
+                width="100%"
+                height="420"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
     </main>
 
-    <footer class="bg-brand-dark text-brand-nude py-16 px-6">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
-            <div>
-                <div class="flex items-center gap-2.5 mb-2">
-                    <img src="images/logo-lips.svg" alt="Logo" class="w-5 h-8 opacity-80">
-                    <h4 class="font-serif text-2xl">Claudia Agüero</h4>
-                </div>
-                <p class="text-brand-nude/60 text-sm">Maquillaje profesional</p>
-            </div>
-            <div class="flex flex-col gap-3 items-center md:items-start">
-                <a href="#servicios" class="text-brand-nude/60 hover:text-white transition-colors text-sm">Servicios</a>
-                <a href="#galeria" class="text-brand-nude/60 hover:text-white transition-colors text-sm">Galería</a>
-                <a href="#contacto" class="text-brand-nude/60 hover:text-white transition-colors text-sm">Contacto</a>
-            </div>
-            <div class="flex justify-center md:justify-end gap-6">
-                <a href="#" class="text-brand-nude/60 hover:text-white transition-colors">
-                    <i data-lucide="instagram" class="w-6 h-6"></i>
+    <footer class="site-footer section-dark">
+        <div class="container footer-grid">
+            <div class="stack">
+                <a href="#inicio" class="brand">
+                    <img src="images/logo-lips.svg" alt="Logo Claudia Agüero">
+                    <span>Claudia Agüero</span>
                 </a>
-                <a href="https://wa.me/542964602903" class="text-brand-nude/60 hover:text-white transition-colors">
-                    <i data-lucide="message-circle" class="w-6 h-6"></i>
-                </a>
+                <p class="lead">Looks que resaltan, experiencias que se recuerdan. Desde Río Grande para toda Tierra del Fuego.</p>
+            </div>
+
+            <div class="stack">
+                <span class="pill">Navegación</span>
+                <a href="#sobre-mi">Sobre mí</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#coordinacion">Coordinación</a>
+                <a href="#galeria">Trabajos</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+
+            <div class="stack">
+                <span class="pill">Redes y contacto</span>
+                <a href="#">Instagram</a>
+                <a href="https://wa.me/542964602903">WhatsApp</a>
+                <a href="mailto:claudiaagueromk@hotmail.com">Email</a>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/10 text-center text-brand-nude/40 text-xs">
-            &copy; 2026 Make-Up de Claudia Agüero. Todos los derechos reservados.
-        </div>
+        <div class="container footer-note">&copy; 2026 Claudia Agüero Make-Up. Todos los derechos reservados.</div>
     </footer>
 
-    <div id="lightbox" class="fixed inset-0 z-[100] bg-brand-dark/95 backdrop-blur-sm hidden opacity-0 flex items-center justify-center transition-opacity duration-300">
-        <button id="lightbox-close" class="absolute top-6 right-6 text-white hover:text-brand-gray transition-colors z-10">
-            <i data-lucide="x" class="w-8 h-8"></i>
+    <div id="lightbox" class="lightbox-overlay hidden">
+        <button id="lightbox-close" class="icon-button lightbox-close" aria-label="Cerrar imagen">
+            <i data-lucide="x"></i>
         </button>
-        <div class="flex flex-col items-center max-h-[92vh] max-w-[92vw]">
-            <img id="lightbox-img" src="" alt="Ampliación" class="max-h-[80vh] max-w-[90vw] object-contain rounded-t-xl shadow-2xl scale-95 transition-transform duration-300">
-            <div id="lightbox-caption" class="w-full bg-brand-dark/90 backdrop-blur-md rounded-b-xl px-6 py-4 border-t border-white/10">
-                <p id="lightbox-title" class="text-brand-nude font-serif text-lg text-center"></p>
+        <div id="lightbox-shell" class="card lightbox-shell">
+            <div class="lightbox-media">
+                <img id="lightbox-img" src="" alt="Ampliación">
+            </div>
+            <div id="lightbox-caption" class="lightbox-caption">
+                <p id="lightbox-title" class="lightbox-title lightbox-title-text"></p>
             </div>
         </div>
     </div>
 
-    <script type="module" src="main.js"></script>
+    <script type="module" src="src/js/app.js"></script>
 </body>
 </html>
