@@ -133,7 +133,6 @@
 .hero-copy .heading-xl {
     max-width: none;
     font-size: clamp(2.8rem, 6vw, 5rem);
-    white-space: nowrap;
     margin-bottom: 24px;
     line-height: 1.05;
 }
@@ -1211,6 +1210,20 @@
     .location-card {
         top: 16px;
         left: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-copy .heading-xl {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+    }
+
+    .hero-copy .lead {
+        font-size: 1rem;
+    }
+
+    .about-grid {
+        gap: 22px;
     }
 }
 
