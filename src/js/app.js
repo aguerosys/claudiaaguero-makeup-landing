@@ -4,7 +4,7 @@ import { initGallery } from './modules/gallery.js';
 import { initNavigation } from './modules/navigation.js';
 import { renderReviews, renderServices } from './modules/renderers.js';
 
-const API_BASE_URL = 'http://localhost:8585';
+const API_BASE_URL = 'https://api.claudiaaguero.com.ar';
 
 document.addEventListener('DOMContentLoaded', async () => {
     renderServices(siteData.services);
