@@ -1013,6 +1013,16 @@
     text-align: center;
 }
 
+.footer-credit {
+    color: rgba(247, 247, 249, 0.4);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.footer-credit:hover {
+    color: rgba(247, 247, 249, 0.75);
+}
+
 .lightbox-overlay {
     position: fixed;
     inset: 0;
